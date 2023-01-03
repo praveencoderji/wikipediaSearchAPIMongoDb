@@ -46,7 +46,7 @@ exports.findSearchByHours = (req, res) => {
     const lastHours = req.query.lastHours;
   
     User.find({
-        "timestamp": { 
+        searchDate: { 
             $gte: new Date(new Date().getTime() - 1000 * 60 * (lastHours*60))
         }
     })
